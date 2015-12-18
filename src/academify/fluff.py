@@ -26,5 +26,11 @@ transition_phrases = [
 ]
 
 def transitions():
+    previous_phrase = None
     while True:
-        yield random.choice(transition_phrases)
+        next_phrase = random.choice(transition_phrases)
+        while next_phrase is previous_phrase:
+            next_phrase = random.choice(transition_phrases)
+
+        previous_phrase = next_phrase
+        yield next_phrase
