@@ -1,7 +1,9 @@
-from .fluff import transitions
 import nltk
 import nltk.corpus
 import nltk.tokenize
+import textwrap
+
+from .fluff import transitions
 
 
 class Transformer():
@@ -59,4 +61,3 @@ class Transformer():
 
     def save(self):
         self.output.write(self.buffer)
-

@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 
-import academify
 import argparse
+
+import academify
 
 
 def process_arguments():
