@@ -2,6 +2,7 @@ import nltk
 import nltk.corpus
 import nltk.tokenize
 import textwrap
+import tqdm
 
 from .fluff import transitions
 
@@ -20,7 +21,7 @@ class Transformer():
         cur_len = len(self.buffer)
 
         while cur_len < self.target_length:
-            for sentence in sentences:
+            for sentence in tqdm.tqdm(sentences):
                 # TODO: develop sentence-level blacklist
                 if '%%' in sentence:
                     self.buffer += sentence
